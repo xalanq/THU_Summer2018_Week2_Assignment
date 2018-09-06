@@ -1,0 +1,38 @@
+<RCC>
+    <qresource prefix="/">
+        <file>res/b0.png</file>
+        <file>res/b1.png</file>
+        <file>res/b2.png</file>
+        <file>res/b3.png</file>
+        <file>res/b4.png</file>
+        <file>res/b5.png</file>
+        <file>res/b6.png</file>
+        <file>res/bg.jpg</file>
+        <file>res/r0.png</file>
+        <file>res/r1.png</file>
+        <file>res/r2.png</file>
+        <file>res/r3.png</file>
+        <file>res/r4.png</file>
+        <file>res/r5.png</file>
+        <file>res/r6.png</file>
+        <file>res/move.wav</file>
+        <file>res/chi.wav</file>
+        <file>res/jiangjun.wav</file>
+        <file>res/start.wav</file>
+        <file>res/warning.wav</file>
+        <file>res/lose.wav</file>
+        <file>res/win.wav</file>
+        <file>res/1.wav</file>
+        <file>res/2.wav</file>
+        <file>res/3.wav</file>
+        <file>res/4.wav</file>
+        <file>res/5.wav</file>
+        <file>res/6.wav</file>
+        <file>res/7.wav</file>
+        <file>res/8.wav</file>
+        <file>res/9.wav</file>
+        <file>res/10.wav</file>
+        <file>res/loading.gif</file>
+        <file>res/icon.ico</file>
+    </qresource>
+</RCC>
