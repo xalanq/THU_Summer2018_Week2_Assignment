@@ -18,8 +18,10 @@ ServerDialog::ServerDialog(QWidget *parent) :
 
 
     for (auto &h : QNetworkInterface::allAddresses())
-        if (h != QHostAddress::LocalHost && h.toIPv4Address())
-            ui->editIP->setText(h.toString());
+        if (h != QHostAddress::LocalHost && h.toIPv4Address()) {
+            ip = h.toString();
+            ui->editIP->setText(ip);
+        }
 
     loadingDialog = new LoadingDialog(tr(u8"建立服务器"), this);
     socket = nullptr;

@@ -58,6 +58,8 @@ private:
 
     LoadingDialog *loadingDialog; ///< 等待连接的对话框
 
+    QString ip; ///< 本地的ip
+
     QTcpServer *server; ///< 监听连接的TcpServer
     QTcpSocket *socket; ///< 连接另一台机器的socket
 };

@@ -176,6 +176,7 @@ void MainWindow::actionAbout() {
                        tr(u8"关于"),
                        tr(u8"<center><b>Week2 Assignment</b></center>" \
                           u8"<p>CopyRight &copy; 2018 by <b>xalanq</b>.</p>" \
+                          u8"<p>主页: <a href='https://github.com/xalanq/THU_Summer2018_Week2_Assignment'>GitHub</a></p>" \
                           u8"<p>邮箱: xalanq@qq.com</p>" \
                           u8"<p>协议: LGPL v3.0</p>" \
                           u8"<p>博客: <a href='https://blog.xalanq.com'>blog.xalanq.com</a></p>"));
