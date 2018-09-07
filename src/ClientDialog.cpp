@@ -37,8 +37,8 @@ QTcpSocket *ClientDialog::getSocket() const {
 }
 
 void ClientDialog::accept() {
-    ip = ui->editIP->text();
-    port = ui->editPort->text();
+    auto ip = ui->editIP->text();
+    auto port = ui->editPort->text();
     if (ip.indexOf(reg) == -1) {
         QMessageBox::warning(this,
                              tr(u8"错误"),

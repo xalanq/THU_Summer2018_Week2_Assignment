@@ -41,7 +41,7 @@ MainWindow::MainWindow(QWidget *parent) :
 
     connect(ui->actionInit, SIGNAL(triggered(bool)), this, SLOT(actionInit()));
     connect(ui->actionAbout, SIGNAL(triggered(bool)), this, SLOT(actionAbout()));
-    connect(ui->actionCanju, SIGNAL(triggered(bool)), this, SLOT(actionCanju()));
+    connect(ui->actionCanju, SIGNAL(triggered(bool)), this, SLOT(actionOpenCanju()));
     connect(ui->actionClient, SIGNAL(triggered(bool)), this, SLOT(actionClient()));
     connect(ui->actionHelp, SIGNAL(triggered(bool)), this, SLOT(actionHelp()));
     connect(ui->actionQuit, SIGNAL(triggered(bool)), this, SLOT(actionClose()));
@@ -103,7 +103,7 @@ void MainWindow::actionInit() {
         w->init();
 }
 
-void MainWindow::actionCanju() {
+void MainWindow::actionOpenCanju() {
     auto filename = QFileDialog::getOpenFileName(this,
                                                  tr(u8"打开残局"),
                                                  "",
@@ -118,7 +118,7 @@ void MainWindow::actionSaveCanju() {
                                                  "",
                                                  tr(u8"文本文件 (*.txt)"));
     if (!filename.isEmpty())
-        w->saveCanju(filename);
+        w->saveCanjuToFile(filename);
 }
 
 void MainWindow::actionClose() {
@@ -214,26 +214,6 @@ void MainWindow::actionHelp() {
                                 u8"</ul>"));
 }
 
-/**
- * 第一个数字表示操作类型：
- *   0: server传输初始数据到client
- *   1: 移动棋子
- *   2: 认输
- *   3: 我赢了！
- *
- * 对于0操作：
- *    首先传输client是红方(0)还是黑方(1)，接着传输每一回合的时间，最后将残局文件传输过去
- *
- * 对于1操作：
- *    接下来4个整数x1, y1, x2, y2，表示坐标(x1, y1)移动到(x2, y2)
- *
- * 对于2操作：
- *    不传输任何其他东西
- *
- * 对于3操作：
- *    不传输任何其他东西
- */
-
 #define netWriteBegin \
     QByteArray data; \
     QDataStream st(&data, QIODevice::WriteOnly);
@@ -265,7 +245,7 @@ void MainWindow::netWriteServer() {
     st << 0;
     st << int(w->isRed());
     st << panelWidget->getTimelimit();
-    st << w->saveCanjuToString();
+    st << w->saveCanju();
 
     netWriteEnd
 

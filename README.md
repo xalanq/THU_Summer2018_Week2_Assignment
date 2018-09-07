@@ -1,10 +1,14 @@
-## Week1 Assignment - Chinese Chess
+## Week2 Assignment - Chinese Chess
 
 这是2018年THU程设小学期的第二周大作业 - 中国象棋
 
 ## 界面
 
 ![](https://raw.githubusercontent.com/xalanq/THU_Summer2018_Week2_Assignment/master/doc/view.png)
+
+## 开发文档
+
+请见`./doc`文件夹
 
 ## 教程
 

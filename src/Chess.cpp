@@ -5,10 +5,8 @@ namespace Chess {
 
 Type type[9][10];
 Color color[9][10];
-Color winner;
 
 void clear() {
-    winner = NOCOLOR;
     for (int i = 0; i < 9; ++i)
         for (int j = 0; j < 10; ++j) {
             type[i][j] = NOTYPE;

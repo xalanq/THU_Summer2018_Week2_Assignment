@@ -107,7 +107,7 @@ void ChessWidget::loadCanju(const QString &data) {
     }
 }
 
-QString ChessWidget::saveCanjuToString() {
+QString ChessWidget::saveCanju() {
     QString f;
     QTextStream st(&f);
 
@@ -138,11 +138,11 @@ QString ChessWidget::saveCanjuToString() {
     return f;
 }
 
-void ChessWidget::saveCanju(QString filename) {
+void ChessWidget::saveCanjuToFile(QString filename) {
     QFile f(filename);
     f.open(QFile::WriteOnly | QFile::Text);
     QTextStream st(&f);
-    st << saveCanjuToString();
+    st << saveCanju();
     st.flush();
     f.close();
 }
